@@ -1,0 +1,7 @@
+# pack-refs with: peeled fully-peeled sorted 
+e403b2cafd33418e4e0798777fb4dd0a397ae65a refs/remotes/origin/localization-(Once-UI-0.4.2)
+eca2eb3dea18890964d8cdb7b05935e610b32cd1 refs/remotes/origin/main
+5f208f7aba70b43329ab58c337863333610d4f00 refs/remotes/origin/staging
+6dcdad252232c779da52871d5457d5e296861fe4 refs/tags/v1.1.0
+55ef7e0669e925598b4d31d1174a17d530a3769e refs/tags/v1.2.0
+bed80c32a55b98cc7d2a8a28696c64c1fe22c42e refs/tags/v1.3.0
