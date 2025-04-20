@@ -1,71 +1,43 @@
-import { Column, Flex, Heading } from "@/once-ui/components";
-import { Mailchimp } from "@/components";
-import { Posts } from "@/components/blog/Posts";
-import { baseURL } from "@/app/resources";
-import { blog, person, newsletter } from "@/app/resources/content";
+---
+title: "Building a Sportbike Comparison Experience for Informed Decisions"
+publishedAt: "Still under development - Coming Soon!"
+summary: "Dive into the development of a tool that helps riders compare motorcycles side-by-side, using interactive specs, manufacturer icons, and dynamic insights to guide their next purchase."
+images:
+  - "/images/projects/Ride Rank/riderank1.png"
+  - "/images/projects/Ride Rank/riderank2.png"
+  - "/images/projects/Ride Rank/riderank4.png"
+team:
+  - name: "Anthony Brunet-Bessette"
+    role: "Full-Stack Web Developer"
+    avatar: "/images/avatar.jpg"
+link: "https://github.com/Anthony123495/RideRank"
+---
 
-export async function generateMetadata() {
-  const title = blog.title;
-  const description = blog.description;
-  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+## Overview
 
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      type: "website",
-      url: `https://${baseURL}/blog`,
-      images: [
-        {
-          url: ogImage,
-          alt: title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [ogImage],
-    },
-  };
-}
+This ongoing project centers on building an intuitive, side-by-side motorcycle comparison tool designed to help users make informed decisions when choosing between VTTs & motorcycles. Featuring detailed specifications, rich performance data, and visual branding from major manufacturers like Yamaha, BMW, Suzuki, and Honda, the platform is crafted to be both informative and engaging. While still in development, the tool is nearly complete and approaching its final stages.
 
-export default function Blog() {
-  return (
-    <Column maxWidth="s">
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Blog",
-            headline: blog.title,
-            description: blog.description,
-            url: `https://${baseURL}/blog`,
-            image: `${baseURL}/og?title=${encodeURIComponent(blog.title)}`,
-            author: {
-              "@type": "Person",
-              name: person.name,
-              image: {
-                "@type": "ImageObject",
-                url: `${baseURL}${person.avatar}`,
-              },
-            },
-          }),
-        }}
-      />
-      <Heading marginBottom="l" variant="display-strong-s">
-        {blog.title}
-      </Heading>
-      <Column fillWidth flex={1}>
-        <Posts range={[1, 3]} thumbnail />
-        <Posts range={[4]} columns="2" />
-      </Column>
-      {newsletter.display && <Mailchimp newsletter={newsletter} />}
-    </Column>
-  );
-}
+## Key Features
+
+- **Dynamic Bike Comparison Tool**: Built a responsive interface that allows users to select two motorcycles and view their specifications side-by-side, covering everything from engine size to power-to-weight ratio.
+- **Brand Iconography Integration**: Incorporated official manufacturer SVG icons directly in the UI (Yamaha, BMW, Suzuki, Honda, and more), offering immediate brand recognition and a clean visual design.
+- **Recent Articles Integration**: Embedded a content section showcasing recent blog posts like "Top 5 Motorcycles of 2025" and "Must-Have Gear for VTT Riders", driving user engagement and SEO value.
+- **FAQs & Community Feedback**: Added a FAQ section and an open support channel for suggestions via Discord, improving transparency and fostering user input.
+- **Responsive Design**: The entire platform is optimized for both desktop and mobile, ensuring usability across all screen sizes.
+
+## Technologies Used
+
+- **React & Firebase**: For front-end development, real-time database syncing, and authentication.
+- **Python**: Used for scraping multiple motorcycle websites and databases to collect comprehensive data on approximately 47,000 motorcycles, including models, brands, production years, and detailed specifications.
+- **MUI (Material UI)**: For styling and responsive component design.
+- **SVG Icon Embeds**: For scalable and fast-loading motorcycle manufacturer logos.
+- **Markdown & CMS Integration**: For managing and displaying blog articles cleanly and efficiently.
+
+## Challenges and Learnings
+
+One major challenge was displaying dense technical specifications in a clear and digestible way. This required designing a layout that prioritized readability without overwhelming users. Additionally, syncing dynamic content like blog articles and user comparisons without requiring account creation meant leveraging localStorage intelligently.
+
+## Outcome
+
+The result is a visually rich and feature-packed sportbike comparison platform that has resonated with motorcycle enthusiasts. By combining dynamic data, editorial content, and responsive UI design, the tool empowers users to make smarter buying decisions — whether they’re new riders or seasoned veterans.
+
